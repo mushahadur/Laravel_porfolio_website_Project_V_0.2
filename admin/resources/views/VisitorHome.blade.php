@@ -30,9 +30,15 @@
             </div>
         </div>
     </div>
-
-</div>
 </div>
 
 
+@endsection
+@section('script')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#VisitorDt').DataTable();
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
 @endsection
