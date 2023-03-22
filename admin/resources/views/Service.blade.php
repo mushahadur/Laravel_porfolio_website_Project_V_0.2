@@ -34,7 +34,7 @@
         <div id="mainDiv" class="container d-none pt-3">
             <div class="row">
                 <div class="col-md-12">
-                    <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <table id="serviceDataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                         <tr>
                             <th class="th-sm">Image</th>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="modal-body">
                     <h4 class="pb-3 text-center">Do You Want to Delete This Data ?</h4>
-                    <h4 id="serviceDeleteId" class="pb-3 text-center"></h4>
+                    <h4 id="serviceDeleteId" class="pb-3 text-center d-none"></h4>
                 </div>
                 <div class="modal-footer">
                     <button id="cluseBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
@@ -99,7 +99,7 @@
                     <h4 >Update Form Modal</h4>
                 </div>
                 <div class="modal-body mx-2">
-                    <h4 id="serviceEditId" class="text-center"></h4>
+                    <h4 id="serviceEditId" class="text-center d-none"></h4>
                     <div id="serviceEditForm"  class="w-100 d-none">
                         <input type="text" class="form-control" id="serviceNameId" placeholder="Enter Service Name"><br>
                         <input type="text" class="form-control" id="serviceDesId" placeholder="Enter Service Description"><br>
@@ -165,10 +165,10 @@
 
 @section('script')
     <script type="text/javascript">
+
         getServicesData();
 
-
-        // For get services Data
+     // For get services Data
         function getServicesData(){
 
             axios.get('/getServicesData')
@@ -178,6 +178,7 @@
                         $('#mainDiv').removeClass('d-none');
                         $('#loaderDiv').addClass('d-none');
 
+                        $('#serviceDataTable').DataTable().destroy();
                         $('#service_table').empty();
 
                         var dataJSON = response.data;
@@ -215,8 +216,11 @@
                             serviceDetails(id);
                             $('#editModal').modal('show');
                         });
+
+                        $('#serviceDataTable').DataTable({"order":false});
+                        $('.dataTables_length').addClass('bs-select');
                     }
-                    else{
+                     else{
                         $('#loaderDiv').removeClass('d-none');
                         $('#wrongDiv').addClass('d-none');
                     }
