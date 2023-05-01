@@ -3,4 +3,5 @@
     @include('Component.HomeBanner')
     @include('Component.HomeServices')
     @include('Component.HomeCourses')
+    @include('Component.HomeProject')
 @endsection

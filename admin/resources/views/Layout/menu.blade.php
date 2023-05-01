@@ -23,6 +23,7 @@
                     <li> <a href="{{route('visitorIndex')}}" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Visitor</span></a></li>
                     <li> <a href="{{route('service')}}" ><span> <i class="fas fa-globe"></i> </span><span class="hide-menu">Services</span></a></li>
                     <li> <a href="{{route('courses')}}" ><span> <i class="fa-solid fa-book-open"></i> </span><span class="hide-menu">Courses</span></a></li>
+                    <li> <a href="{{route('projects')}}" ><span> <i class="fa-solid fa-code"></i> </span><span class="hide-menu">Projects</span></a></li>
                 </ul>
             </nav>
         </div>
