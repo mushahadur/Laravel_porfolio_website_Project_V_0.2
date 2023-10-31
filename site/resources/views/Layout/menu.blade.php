@@ -1,6 +1,6 @@
 
 <nav class="navbar fixed-top nav-before navbar-expand-lg navbar-light bg-light shadow">
-    <a class="navbar-brand" href="#"><img class="nav-logo" src="{{asset('/')}}assets/images/navlogo.png"></a>
+    <a class="navbar-brand" href="#"><img class="nav-logo" style=" height:50px; width:60px;" src="{{asset('/')}}assets/images/logo.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

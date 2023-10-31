@@ -28,4 +28,8 @@ class HomeController extends Controller
         ]);
 
     }
+
+    public function contactSend(){
+        $contact_name=$reques->input();
+    }
 }
